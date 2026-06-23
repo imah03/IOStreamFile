@@ -1,13 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package bagian2.bacatulis;
 
-/**
- *
- * @author Lenovo
- */
+import java.io.*;
+
 public class LatihanMandiri5 {
-    
+    public static void main(String[] args) {
+
+        try (PrintWriter penulis = new PrintWriter(new FileWriter("hari.txt", true))) {
+            penulis.println("Sabtu");
+            penulis.println("Minggu");
+
+            System.out.println("Data berhasil ditambahkan.");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("\nIsi hari.txt:");
+
+        try (BufferedReader pembaca = new BufferedReader(new FileReader("hari.txt"))) {
+            String baris;
+
+            while ((baris = pembaca.readLine()) != null) {
+                System.out.println(baris);
+            }
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

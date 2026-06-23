@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package bagian1.berkas;
 
-/**
- *
- * @author Lenovo
- */
+import java.io.File;
+
 public class LatihanMandiri2 {
-    
+    public static void main(String[] args) {
+        File arsip = new File("arsip");
+
+        if (arsip.mkdir()) {
+            System.out.println("Folder berhasil dibuat.");
+        } else {
+            System.out.println("Folder gagal dibuat atau sudah ada.");
+        }
+    }
 }
